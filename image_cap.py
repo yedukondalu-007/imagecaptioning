@@ -13,8 +13,6 @@ image = Image.open(img_path).convert('RGB')
 text = "the image of"
 inputs = processor(images=image, text=text, return_tensors="pt")
 # You do not need a question for image captioning
-# text = "the image of"
-# inputs = processor(images=image, text=text, return_tensors="pt")
 # Generate a caption for the image
 outputs = model.generate(**inputs, max_length=50)
 # Decode the generated tokens to text
